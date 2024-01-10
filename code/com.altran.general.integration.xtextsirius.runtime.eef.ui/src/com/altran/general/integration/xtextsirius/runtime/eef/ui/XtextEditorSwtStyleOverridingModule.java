@@ -28,6 +28,7 @@ import com.google.inject.Provider;
  * EmbeddedEditorFactory.Builder}.
  *
  * @author nstotz
+ * @author Horacio Hoyos Rodriguez - added inject members for factory
  *
  */
 @SuppressWarnings("restriction")
@@ -50,7 +51,7 @@ public class XtextEditorSwtStyleOverridingModule implements Module {
 						final EmbeddedEditorFactory.Builder result = new EmbeddedEditorFactory.Builder() {
 							@Override
 							public EmbeddedEditor withParent(final Composite parent) {
-								this.sourceViewerFactory = new XtextSourceViewer.DefaultFactory() {
+								final XtextSourceViewer.DefaultFactory defaultFactory = new XtextSourceViewer.DefaultFactory() {
 									@Override
 									public XtextSourceViewer createSourceViewer(final Composite parent,
 											final IVerticalRuler ruler,
@@ -63,6 +64,8 @@ public class XtextEditorSwtStyleOverridingModule implements Module {
 												XtextEditorSwtStyleOverridingModule.this.style);
 									}
 								};
+								localInjector.injectMembers(defaultFactory);
+								this.sourceViewerFactory = defaultFactory;
 								return super.withParent(parent);
 							}
 						};

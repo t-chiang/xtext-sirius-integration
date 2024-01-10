@@ -9,7 +9,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ClassPath: .
 Export-Package: com.altran.general.integration.xtextsirius.model.viewpoint.viewpointxtext.provider
 Require-Bundle: org.eclipse.core.runtime;bundle-version=3.14.0,

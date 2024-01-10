@@ -31,75 +31,75 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 public abstract class ATestEMerger<T extends IElement<?>> {
   @Extension
   protected XtextSiriusTestPackage xtextSiriusTestPackage = XtextSiriusTestPackage.eINSTANCE;
-  
+
   @Extension
   protected XtextSiriusTestFactory xtextSiriusTestFactory = XtextSiriusTestFactory.eINSTANCE;
-  
+
   protected EMerger<T> createEMerger(final T existing, final T edited) {
     IXtextSiriusModelDescriptor _createDescriptor = this.createDescriptor();
     URI _createURI = URI.createURI("resourceName.xmi#/42");
     return new EMerger<T>(_createDescriptor, existing, _createURI);
   }
-  
+
   protected EMerger<T> createEMerger(final T existing, final EStructuralFeature feature) {
     IXtextSiriusModelDescriptor _createDescriptor = this.createDescriptor();
     URI _createURI = URI.createURI("resourceName.xmi#/42");
     return new EMerger<T>(_createDescriptor, existing, _createURI);
   }
-  
+
   public IXtextSiriusModelDescriptor createDescriptor() {
     return this.createDescriptor(CollectionLiterals.<String>emptySet(), CollectionLiterals.<String>emptySet());
   }
-  
+
   public IXtextSiriusModelDescriptor createDescriptor(final Set<String> editableFeaturesSet, final Set<String> ignoredNestedFeaturesSet) {
     return new IXtextSiriusModelDescriptor() {
       @Override
       public Set<String> getEditableFeatures() {
         return editableFeaturesSet;
       }
-      
+
       @Override
       public Set<String> getIgnoredNestedFeatures() {
         return ignoredNestedFeaturesSet;
       }
-      
+
       @Override
       public String getPrefixTerminalsExpression() {
         return null;
       }
-      
+
       @Override
       public Set<String> getSelectedFeatures() {
         return CollectionLiterals.<String>emptySet();
       }
-      
+
       @Override
       public String getSuffixTerminalsExpression() {
         return null;
       }
-      
+
       @Override
       public boolean isMultiLine() {
         return false;
       }
-      
+
       @Override
       public Injector getInjector() {
         throw new IllegalStateException("Didn\'t expect this call");
       }
-      
+
       @Override
       public boolean isCancelOnValidationError() {
         return false;
       }
-      
+
       @Override
       public boolean isEnableFormatter() {
         return true;
       }
     };
   }
-  
+
   public T newElement(final int id, final String attrValue) {
     T _createRootElement = this.createRootElement();
     final Procedure1<T> _function = (T it) -> {
@@ -107,12 +107,12 @@ public abstract class ATestEMerger<T extends IElement<?>> {
     };
     return ObjectExtensions.<T>operator_doubleArrow(_createRootElement, _function);
   }
-  
+
   protected T createRootElement() {
     Element _createElement = this.xtextSiriusTestFactory.createElement();
     return ((T) _createElement);
   }
-  
+
   protected String renderList(final Collection<? extends Element> seq) {
     final Function1<Element, CharSequence> _function = (Element it) -> {
       return it.getChangeableAttr();

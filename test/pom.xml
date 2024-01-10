@@ -6,10 +6,6 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 	<artifactId>com.altran.general.integration.xtextsirius.tests</artifactId>
-	
-	<!-- Override version if needed -->
-	<version>1.0.0-SNAPSHOT</version>
-	
 	<packaging>pom</packaging>
 	
 	<modules>

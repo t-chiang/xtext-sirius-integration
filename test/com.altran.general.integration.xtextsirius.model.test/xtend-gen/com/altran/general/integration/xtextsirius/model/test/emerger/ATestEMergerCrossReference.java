@@ -10,7 +10,6 @@
 package com.altran.general.integration.xtextsirius.model.test.emerger;
 
 import com.altran.general.integration.xtextsirius.model.test.XtextSiriusTest.IElement;
-import com.altran.general.integration.xtextsirius.model.test.emerger.ATestEMergerEReference;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
@@ -40,7 +39,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     final T result = this.createEMerger(existing, edited).merge(edited);
     Assert.assertNull(result.getChangeableRef());
   }
-  
+
   @Test
   public void singleNull_singleExisting() {
     T _createRootElement = this.createRootElement();
@@ -56,7 +55,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     final T result = this.createEMerger(existing, edited).merge(edited);
     Assert.assertNull(result.getChangeableRef());
   }
-  
+
   @Test
   public void singleNonNull_singleNew() {
     T _createRootElement = this.createRootElement();
@@ -73,7 +72,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertNotNull(result.getChangeableRef());
     Assert.assertEquals("aanswer", result.getChangeableRef().getChangeableAttr());
   }
-  
+
   @Test
   public void singleNonNull_singleExisting() {
     T _createRootElement = this.createRootElement();
@@ -89,7 +88,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     final T result = this.createEMerger(existing, edited).merge(edited);
     Assert.assertEquals("aanswer", result.getChangeableRef().getChangeableAttr());
   }
-  
+
   @Test
   public void bag_bagNew() {
     T _createRootElement = this.createRootElement();
@@ -114,7 +113,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "a3.14"));
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "a2.71"));
   }
-  
+
   @Test
   public void bag_bagExisting() {
     T _createRootElement = this.createRootElement();
@@ -141,7 +140,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "a3.14"));
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "a2.71"));
   }
-  
+
   @Test
   public void set_setNew() {
     T _createRootElement = this.createRootElement();
@@ -166,7 +165,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableSetRef(), "a3"));
     Assert.assertTrue(this.valueExists(result.getChangeableSetRef(), "a2"));
   }
-  
+
   @Test
   public void set_setExisting() {
     T _createRootElement = this.createRootElement();
@@ -193,7 +192,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableSetRef(), "a3"));
     Assert.assertTrue(this.valueExists(result.getChangeableSetRef(), "a2"));
   }
-  
+
   @Test
   public void list_listNew() {
     T _createRootElement = this.createRootElement();
@@ -222,7 +221,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     boolean _equals_1 = Objects.equal("a2", _changeableAttr_1);
     Assert.assertTrue(_equals_1);
   }
-  
+
   @Test
   public void list_listExisting() {
     T _createRootElement = this.createRootElement();
@@ -253,7 +252,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     boolean _equals_1 = Objects.equal("a2", _changeableAttr_1);
     Assert.assertTrue(_equals_1);
   }
-  
+
   @Test
   public void singleNull_bagEmpty() {
     T _createRootElement = this.createRootElement();
@@ -265,7 +264,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     final T result = this.createEMerger(existing, this.xtextSiriusTestPackage.getAElement_ChangeableBagRef()).merge(null, this.xtextSiriusTestPackage.getAElement_ChangeableBagRef());
     Assert.assertTrue(result.getChangeableBagRef().isEmpty());
   }
-  
+
   @Test
   public void singleNull_bagNew() {
     T _createRootElement = this.createRootElement();
@@ -285,7 +284,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "q2.71"));
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "q31.337"));
   }
-  
+
   @Test
   public void singleNull_setEmpty() {
     T _createRootElement = this.createRootElement();
@@ -297,7 +296,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     final T result = this.createEMerger(existing, this.xtextSiriusTestPackage.getAElement_ChangeableSetRef()).merge(null, this.xtextSiriusTestPackage.getAElement_ChangeableSetRef());
     Assert.assertTrue(result.getChangeableSetRef().isEmpty());
   }
-  
+
   @Test
   public void singleNull_setNew() {
     T _createRootElement = this.createRootElement();
@@ -317,7 +316,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableSetRef(), "q2"));
     Assert.assertTrue(this.valueExists(result.getChangeableSetRef(), "q31"));
   }
-  
+
   @Test
   public void singleNull_listEmpty() {
     T _createRootElement = this.createRootElement();
@@ -329,7 +328,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     final T result = this.createEMerger(existing, this.xtextSiriusTestPackage.getAElement_ChangeableListRef()).merge(null, this.xtextSiriusTestPackage.getAElement_ChangeableListRef());
     Assert.assertTrue(result.getChangeableListRef().isEmpty());
   }
-  
+
   @Test
   public void singleNull_listNew() {
     T _createRootElement = this.createRootElement();
@@ -361,7 +360,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     boolean _equals_4 = Objects.equal("q2", _changeableAttr_4);
     Assert.assertTrue(_equals_4);
   }
-  
+
   @Test
   public void singleNonNull_bagEmpty() {
     T _createRootElement = this.createRootElement();
@@ -374,7 +373,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertEquals(1, result.getChangeableBagRef().size());
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "a3.14"));
   }
-  
+
   @Test
   public void singleNonNull_bagNew() {
     T _createRootElement = this.createRootElement();
@@ -395,7 +394,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "q31.337"));
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "a3.14"));
   }
-  
+
   @Test
   public void singleNonNull_bagExisting() {
     T _createRootElement = this.createRootElement();
@@ -424,7 +423,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "q1.337"));
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "q31.337"));
   }
-  
+
   @Test
   public void singleNonNull_setEmpty() {
     T _createRootElement = this.createRootElement();
@@ -437,7 +436,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertEquals(1, result.getChangeableSetRef().size());
     Assert.assertTrue(this.valueExists(result.getChangeableSetRef(), "a3"));
   }
-  
+
   @Test
   public void singleNonNull_setNew() {
     T _createRootElement = this.createRootElement();
@@ -458,7 +457,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableSetRef(), "q31"));
     Assert.assertTrue(this.valueExists(result.getChangeableSetRef(), "a3"));
   }
-  
+
   @Test
   public void singleNonNull_setExisting() {
     T _createRootElement = this.createRootElement();
@@ -487,7 +486,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableSetRef(), "q2"));
     Assert.assertTrue(this.valueExists(result.getChangeableSetRef(), "q31"));
   }
-  
+
   @Test
   public void singleNonNull_listEmpty() {
     T _createRootElement = this.createRootElement();
@@ -502,7 +501,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     boolean _equals = Objects.equal("a3", _changeableAttr);
     Assert.assertTrue(_equals);
   }
-  
+
   @Test
   public void singleNonNull_listNew() {
     T _createRootElement = this.createRootElement();
@@ -537,7 +536,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     boolean _equals_5 = Objects.equal("a3", _changeableAttr_5);
     Assert.assertTrue(_equals_5);
   }
-  
+
   @Test
   public void singleNonNull_listExisting() {
     T _createRootElement = this.createRootElement();
@@ -577,7 +576,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     boolean _equals_4 = Objects.equal("q2", _changeableAttr_4);
     Assert.assertTrue(_equals_4);
   }
-  
+
   @Test
   public void set_bagEmpty() {
     T _createRootElement = this.createRootElement();
@@ -591,7 +590,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "a3.14"));
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "a2.71"));
   }
-  
+
   @Test
   public void set_bagPartiallyExisting() {
     T _createRootElement = this.createRootElement();
@@ -618,7 +617,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "a2.71"));
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "a3.14"));
   }
-  
+
   @Test
   public void set_listEmpty() {
     T _createRootElement = this.createRootElement();
@@ -632,7 +631,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableListRef(), "a3"));
     Assert.assertTrue(this.valueExists(result.getChangeableListRef(), "a2"));
   }
-  
+
   @Test
   public void set_listPartiallyExisting() {
     T _createRootElement = this.createRootElement();
@@ -659,7 +658,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableListRef(), "a3"));
     Assert.assertTrue(this.valueExists(result.getChangeableListRef(), "a2"));
   }
-  
+
   @Test
   public void list_bagEmpty() {
     T _createRootElement = this.createRootElement();
@@ -675,7 +674,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "a3.14"));
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "a2.71"));
   }
-  
+
   @Test
   public void list_bagPartiallyExisting() {
     T _createRootElement = this.createRootElement();
@@ -704,7 +703,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "a2.71"));
     Assert.assertTrue(this.valueExists(result.getChangeableBagRef(), "a3.14"));
   }
-  
+
   @Test
   public void list_setEmpty() {
     T _createRootElement = this.createRootElement();
@@ -720,7 +719,7 @@ public abstract class ATestEMergerCrossReference<T extends IElement<T>> extends 
     Assert.assertTrue(this.valueExists(result.getChangeableSetRef(), "a3"));
     Assert.assertTrue(this.valueExists(result.getChangeableSetRef(), "a2"));
   }
-  
+
   @Test
   public void list_setPartiallyExisting() {
     T _createRootElement = this.createRootElement();

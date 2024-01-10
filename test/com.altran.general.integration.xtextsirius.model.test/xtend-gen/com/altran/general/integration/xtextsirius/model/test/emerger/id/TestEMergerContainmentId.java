@@ -33,12 +33,12 @@ public class TestEMergerContainmentId extends ATestEMergerContainmentIdentity<Id
     };
     return ObjectExtensions.<IdElement>operator_doubleArrow(_createIdElement, _function);
   }
-  
+
   @Override
   protected IdElement createRootElement() {
     return this.xtextSiriusTestFactory.createIdElement();
   }
-  
+
   @Test
   @Override
   public void set_setNew() {
@@ -64,7 +64,7 @@ public class TestEMergerContainmentId extends ATestEMergerContainmentIdentity<Id
     Assert.assertTrue(this.valueExists(result.getChangeableSetCont(), "q1"));
     Assert.assertTrue(this.valueExists(result.getChangeableSetCont(), "q31"));
   }
-  
+
   @Test
   @Override
   public void set_listPartiallyExisting() {

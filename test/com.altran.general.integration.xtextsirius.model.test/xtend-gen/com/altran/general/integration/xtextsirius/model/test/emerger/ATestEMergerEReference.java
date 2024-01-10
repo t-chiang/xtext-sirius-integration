@@ -10,7 +10,6 @@
 package com.altran.general.integration.xtextsirius.model.test.emerger;
 
 import com.altran.general.integration.xtextsirius.model.test.XtextSiriusTest.IElement;
-import com.altran.general.integration.xtextsirius.model.test.emerger.ATestEMerger;
 import com.google.common.base.Objects;
 import java.util.Collection;
 import java.util.Map;
@@ -34,9 +33,9 @@ import org.junit.BeforeClass;
 @SuppressWarnings("all")
 public class ATestEMergerEReference<T extends IElement<?>> extends ATestEMerger<T> {
   protected Resource editedResource;
-  
+
   protected Resource existingResource;
-  
+
   @BeforeClass
   public static void registerEmf() {
     final EPackage.Registry packageRegistry = EPackage.Registry.INSTANCE;
@@ -53,27 +52,27 @@ public class ATestEMergerEReference<T extends IElement<?>> extends ATestEMerger<
     EcoreFactory.eINSTANCE.getClass();
     ChangePackage.eINSTANCE.getClass();
   }
-  
+
   @Before
   public void initResources() {
     this.editedResource = new ResourceSetImpl().createResource(URI.createURI("__synthetic__resourceName.xmi"));
     this.existingResource = new ResourceSetImpl().createResource(URI.createURI("resourceName.xmi"));
   }
-  
+
   protected T newEdited(final int id, final String attrValue) {
     final T result = this.newElement(id, ("a" + attrValue));
     EList<EObject> _contents = this.editedResource.getContents();
     _contents.add(result);
     return result;
   }
-  
+
   protected T newExisting(final int id, final String attrValue) {
     final T result = this.newElement(id, ("q" + attrValue));
     EList<EObject> _contents = this.existingResource.getContents();
     _contents.add(result);
     return result;
   }
-  
+
   protected boolean valueExists(final Collection<T> elements, final String attrValue) {
     final Function1<T, Boolean> _function = (T it) -> {
       String _changeableAttr = it.getChangeableAttr();

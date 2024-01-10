@@ -18,7 +18,7 @@ Require-Bundle: org.eclipse.xtext.example.fowlerdsl;visibility:=reexport,
  org.eclipse.xtext.common.types,
  org.objectweb.asm;resolution:=optional,
  com.altran.general.integration.xtextsirius.runtime
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.eclipse.xtext.example.fowlerdsl,
  org.eclipse.xtext.example.fowlerdsl.validation,
  org.eclipse.xtext.example.fowlerdsl.serializer,

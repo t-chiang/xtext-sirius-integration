@@ -10,7 +10,6 @@
 package com.altran.general.integration.xtextsirius.model.test.emerger;
 
 import com.altran.general.integration.xtextsirius.model.test.XtextSiriusTest.IElement;
-import com.altran.general.integration.xtextsirius.model.test.emerger.ATestEMergerEReference;
 import com.google.common.collect.Iterables;
 import java.util.Collections;
 import org.eclipse.emf.common.util.EList;
@@ -37,7 +36,7 @@ public abstract class ATestEMergerContainment<T extends IElement<T>> extends ATe
     final T result = this.createEMerger(existing, edited).merge(edited);
     Assert.assertNull(result.getChangeableCont());
   }
-  
+
   @Test
   public void singleNull_singleExisting() {
     T _createRootElement = this.createRootElement();
@@ -53,7 +52,7 @@ public abstract class ATestEMergerContainment<T extends IElement<T>> extends ATe
     final T result = this.createEMerger(existing, edited).merge(edited);
     Assert.assertNull(result.getChangeableCont());
   }
-  
+
   @Test
   public void singleNonNull_singleNew() {
     T _createRootElement = this.createRootElement();
@@ -77,7 +76,7 @@ public abstract class ATestEMergerContainment<T extends IElement<T>> extends ATe
     Assert.assertEquals("aanswer", result.getChangeableCont().getChangeableAttr());
     Assert.assertTrue(result.getChangeableCont().getChangeableListAttr().contains("ccc"));
   }
-  
+
   @Test
   public void singleNonNull_singleNew_deep() {
     T _createRootElement = this.createRootElement();
@@ -110,7 +109,7 @@ public abstract class ATestEMergerContainment<T extends IElement<T>> extends ATe
     Assert.assertEquals("amegaAnswer", result.getChangeableCont().getChangeableCont().getChangeableAttr());
     Assert.assertTrue(result.getChangeableCont().getChangeableCont().getChangeableListAttr().contains("ddd"));
   }
-  
+
   @Test
   public void singleNonNull_singleExisting() {
     T _createRootElement = this.createRootElement();
@@ -133,7 +132,7 @@ public abstract class ATestEMergerContainment<T extends IElement<T>> extends ATe
     Assert.assertEquals("aanswer", result.getChangeableCont().getChangeableAttr());
     Assert.assertTrue(result.getChangeableListAttr().isEmpty());
   }
-  
+
   @Test
   public void set_setNew() {
     T _createRootElement = this.createRootElement();
@@ -158,7 +157,7 @@ public abstract class ATestEMergerContainment<T extends IElement<T>> extends ATe
     Assert.assertTrue(this.valueExists(result.getChangeableSetCont(), "a3"));
     Assert.assertTrue(this.valueExists(result.getChangeableSetCont(), "a2"));
   }
-  
+
   @Test
   public void set_setExisting() {
     T _createRootElement = this.createRootElement();
@@ -185,7 +184,7 @@ public abstract class ATestEMergerContainment<T extends IElement<T>> extends ATe
     Assert.assertTrue(this.valueExists(result.getChangeableSetCont(), "a3"));
     Assert.assertTrue(this.valueExists(result.getChangeableSetCont(), "a2"));
   }
-  
+
   @Test
   public void list_listNew() {
     T _createRootElement = this.createRootElement();
@@ -210,7 +209,7 @@ public abstract class ATestEMergerContainment<T extends IElement<T>> extends ATe
     Assert.assertEquals("a3", result.getChangeableUniqueListCont().get(0).getChangeableAttr());
     Assert.assertEquals("a2", result.getChangeableUniqueListCont().get(1).getChangeableAttr());
   }
-  
+
   @Test
   public void list_listExisting() {
     T _createRootElement = this.createRootElement();

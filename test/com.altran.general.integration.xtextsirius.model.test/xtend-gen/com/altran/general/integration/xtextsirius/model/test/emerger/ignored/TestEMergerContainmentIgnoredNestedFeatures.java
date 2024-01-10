@@ -38,9 +38,9 @@ import org.junit.Test;
 @SuppressWarnings("all")
 public class TestEMergerContainmentIgnoredNestedFeatures extends ATestEMergerContainment<Element> {
   private int i = 100;
-  
+
   protected Element existing;
-  
+
   protected Set<String> nestedFeaturesToIgnore = IterableExtensions.<String>toSet(Iterables.<String>concat(ListExtensions.<EStructuralFeature, Iterable<String>>map(XtextSiriusTestPackage.Literals.ELEMENT.getEAllStructuralFeatures(), ((Function1<EStructuralFeature, Iterable<String>>) (EStructuralFeature feature) -> {
     final Function1<EStructuralFeature, Boolean> _function = (EStructuralFeature it) -> {
       String _name = it.getName();
@@ -54,7 +54,7 @@ public class TestEMergerContainmentIgnoredNestedFeatures extends ATestEMergerCon
     };
     return IterableExtensions.<EStructuralFeature, String>map(IterableExtensions.<EStructuralFeature>filter(XtextSiriusTestPackage.Literals.ELEMENT.getEAllStructuralFeatures(), _function), _function_1);
   }))));
-  
+
   @Override
   protected EMerger<Element> createEMerger(final Element existing, final Element edited) {
     EMerger<Element> _xblockexpression = null;
@@ -66,7 +66,7 @@ public class TestEMergerContainmentIgnoredNestedFeatures extends ATestEMergerCon
     }
     return _xblockexpression;
   }
-  
+
   @Override
   protected EMerger<Element> createEMerger(final Element existing, final EStructuralFeature feature) {
     EMerger<Element> _xblockexpression = null;
@@ -78,7 +78,7 @@ public class TestEMergerContainmentIgnoredNestedFeatures extends ATestEMergerCon
     }
     return _xblockexpression;
   }
-  
+
   @After
   public void checkIgnoredNestedFeatures() {
     Assert.assertNotNull(this.existing);
@@ -97,7 +97,7 @@ public class TestEMergerContainmentIgnoredNestedFeatures extends ATestEMergerCon
     };
     IteratorExtensions.<Element>forEach(Iterators.<Element>filter(EcoreUtil.<Object>getAllContents(this.existing, false), Element.class), _function);
   }
-  
+
   @Test
   @Override
   public void singleNonNull_singleExisting() {
@@ -122,7 +122,7 @@ public class TestEMergerContainmentIgnoredNestedFeatures extends ATestEMergerCon
     Assert.assertTrue(result.getChangeableCont().getChangeableListAttr().contains("aaa"));
     Assert.assertTrue(result.getChangeableCont().getChangeableListAttr().contains("bbb"));
   }
-  
+
   @Test
   @Override
   public void singleNonNull_singleNew() {
@@ -149,7 +149,7 @@ public class TestEMergerContainmentIgnoredNestedFeatures extends ATestEMergerCon
     EList<String> _changeableListAttr = result.getChangeableCont().getChangeableListAttr();
     Iterables.<String>addAll(_changeableListAttr, Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("aaa", "bbb")));
   }
-  
+
   @Test
   @Override
   public void singleNonNull_singleNew_deep() {
@@ -186,7 +186,7 @@ public class TestEMergerContainmentIgnoredNestedFeatures extends ATestEMergerCon
     EList<String> _changeableListAttr = result.getChangeableCont().getChangeableListAttr();
     Iterables.<String>addAll(_changeableListAttr, Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("aaa", "bbb")));
   }
-  
+
   @Test
   public void singleNonNull_listNew() {
     Element _createRootElement = this.createRootElement();
@@ -232,7 +232,7 @@ public class TestEMergerContainmentIgnoredNestedFeatures extends ATestEMergerCon
     Element _get = result.getChangeableUniqueListCont().get(5);
     _get.setChangeableCont(null);
   }
-  
+
   @Override
   protected Element newEdited(final int id, final String attrValue) {
     Element _createRootElement = this.createRootElement();
@@ -272,7 +272,7 @@ public class TestEMergerContainmentIgnoredNestedFeatures extends ATestEMergerCon
     _contents.add(result);
     return result;
   }
-  
+
   @Override
   protected Element newExisting(final int id, final String attrValue) {
     Element _newExisting = super.newExisting(id, attrValue);
@@ -282,7 +282,7 @@ public class TestEMergerContainmentIgnoredNestedFeatures extends ATestEMergerCon
     };
     return ObjectExtensions.<Element>operator_doubleArrow(_newExisting, _function);
   }
-  
+
   private Element newDummyElement() {
     int _plusPlus = this.i++;
     String _plus = ("untouched" + Integer.valueOf(_plusPlus));

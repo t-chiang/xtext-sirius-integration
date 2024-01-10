@@ -25,7 +25,7 @@ public class TestEMergerCrossReferenceId extends ATestEMergerEReference<IdElemen
     };
     return ObjectExtensions.<IdElement>operator_doubleArrow(_createIdElement, _function);
   }
-  
+
   @Override
   protected IdElement createRootElement() {
     return this.xtextSiriusTestFactory.createIdElement();

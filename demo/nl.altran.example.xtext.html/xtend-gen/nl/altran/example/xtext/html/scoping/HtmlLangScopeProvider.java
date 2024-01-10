@@ -3,8 +3,6 @@
  */
 package nl.altran.example.xtext.html.scoping;
 
-import nl.altran.example.xtext.html.scoping.AbstractHtmlLangScopeProvider;
-
 /**
  * This class contains custom scoping description.
  * 

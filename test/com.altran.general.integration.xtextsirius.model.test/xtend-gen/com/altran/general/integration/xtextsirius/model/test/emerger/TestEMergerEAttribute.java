@@ -10,7 +10,6 @@
 package com.altran.general.integration.xtextsirius.model.test.emerger;
 
 import com.altran.general.integration.xtextsirius.model.test.XtextSiriusTest.Element;
-import com.altran.general.integration.xtextsirius.model.test.emerger.ATestEMerger;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import java.util.Collections;
@@ -38,7 +37,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     final Element result = this.createEMerger(existing, edited).merge(edited);
     Assert.assertNull(result.getChangeableAttr());
   }
-  
+
   @Test
   public void singleNull_singleExisting() {
     Element _createRootElement = this.createRootElement();
@@ -54,7 +53,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     final Element result = this.createEMerger(existing, edited).merge(edited);
     Assert.assertNull(result.getChangeableAttr());
   }
-  
+
   @Test
   public void singleNonNull_singleNew() {
     Element _createRootElement = this.createRootElement();
@@ -70,7 +69,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     final Element result = this.createEMerger(existing, edited).merge(edited);
     Assert.assertEquals("Hi", result.getChangeableAttr());
   }
-  
+
   @Test
   public void singleNonNull_singleExisting() {
     Element _createRootElement = this.createRootElement();
@@ -86,7 +85,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     final Element result = this.createEMerger(existing, edited).merge(edited);
     Assert.assertEquals("Greetings", result.getChangeableAttr());
   }
-  
+
   @Test
   public void bag_bagNew() {
     Element _createRootElement = this.createRootElement();
@@ -108,7 +107,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(1.337)));
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(31.337)));
   }
-  
+
   @Test
   public void bag_bagExisting() {
     Element _createRootElement = this.createRootElement();
@@ -130,7 +129,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(1.337)));
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(31.337)));
   }
-  
+
   @Test
   public void set_setNew() {
     Element _createRootElement = this.createRootElement();
@@ -152,7 +151,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableSetAttr().contains(Integer.valueOf(1)));
     Assert.assertTrue(result.getChangeableSetAttr().contains(Integer.valueOf(31)));
   }
-  
+
   @Test
   public void set_setExisting() {
     Element _createRootElement = this.createRootElement();
@@ -174,7 +173,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableSetAttr().contains(Integer.valueOf(1)));
     Assert.assertTrue(result.getChangeableSetAttr().contains(Integer.valueOf(31)));
   }
-  
+
   @Test
   public void list_listNew() {
     Element _createRootElement = this.createRootElement();
@@ -197,7 +196,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertEquals("3", result.getChangeableListAttr().get(3));
     Assert.assertEquals("2", result.getChangeableListAttr().get(4));
   }
-  
+
   @Test
   public void list_listExisting() {
     Element _createRootElement = this.createRootElement();
@@ -221,7 +220,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertEquals("2", result.getChangeableListAttr().get(4));
     Assert.assertEquals("3", result.getChangeableListAttr().get(5));
   }
-  
+
   @Test
   public void singleNull_bagEmpty() {
     Element _createRootElement = this.createRootElement();
@@ -233,7 +232,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     final Element result = this.createEMerger(existing, this.xtextSiriusTestPackage.getIElement_ChangeableBagAttr()).merge(null, this.xtextSiriusTestPackage.getIElement_ChangeableBagAttr());
     Assert.assertTrue(result.getChangeableBagAttr().isEmpty());
   }
-  
+
   @Test
   public void singleNull_bagNew() {
     Element _createRootElement = this.createRootElement();
@@ -248,7 +247,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(2.71)));
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(31.337)));
   }
-  
+
   @Test
   public void singleNull_setEmpty() {
     Element _createRootElement = this.createRootElement();
@@ -260,7 +259,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     final Element result = this.createEMerger(existing, this.xtextSiriusTestPackage.getIElement_ChangeableSetAttr()).merge(null, this.xtextSiriusTestPackage.getIElement_ChangeableSetAttr());
     Assert.assertTrue(result.getChangeableSetAttr().isEmpty());
   }
-  
+
   @Test
   public void singleNull_setNew() {
     Element _createRootElement = this.createRootElement();
@@ -275,7 +274,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableSetAttr().contains(Integer.valueOf(2)));
     Assert.assertTrue(result.getChangeableSetAttr().contains(Integer.valueOf(31)));
   }
-  
+
   @Test
   public void singleNull_listEmpty() {
     Element _createRootElement = this.createRootElement();
@@ -287,7 +286,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     final Element result = this.createEMerger(existing, this.xtextSiriusTestPackage.getIElement_ChangeableListAttr()).merge(null, this.xtextSiriusTestPackage.getIElement_ChangeableListAttr());
     Assert.assertTrue(result.getChangeableListAttr().isEmpty());
   }
-  
+
   @Test
   public void singleNull_listNew() {
     Element _createRootElement = this.createRootElement();
@@ -304,7 +303,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertEquals("1", result.getChangeableListAttr().get(3));
     Assert.assertEquals("2", result.getChangeableListAttr().get(4));
   }
-  
+
   @Test
   public void singleNonNull_bagEmpty() {
     Element _createRootElement = this.createRootElement();
@@ -317,7 +316,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertEquals(1, result.getChangeableBagAttr().size());
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(3.14)));
   }
-  
+
   @Test
   public void singleNonNull_bagNew() {
     Element _createRootElement = this.createRootElement();
@@ -333,7 +332,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(31.337)));
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(3.14)));
   }
-  
+
   @Test
   public void singleNonNull_bagExisting() {
     Element _createRootElement = this.createRootElement();
@@ -348,7 +347,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(2.71)));
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(31.337)));
   }
-  
+
   @Test
   public void singleNonNull_setEmpty() {
     Element _createRootElement = this.createRootElement();
@@ -361,7 +360,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertEquals(1, result.getChangeableSetAttr().size());
     Assert.assertTrue(result.getChangeableSetAttr().contains(Integer.valueOf(3)));
   }
-  
+
   @Test
   public void singleNonNull_setNew() {
     Element _createRootElement = this.createRootElement();
@@ -377,7 +376,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableSetAttr().contains(Integer.valueOf(31)));
     Assert.assertTrue(result.getChangeableSetAttr().contains(Integer.valueOf(3)));
   }
-  
+
   @Test
   public void singleNonNull_setExisting() {
     Element _createRootElement = this.createRootElement();
@@ -392,7 +391,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableSetAttr().contains(Integer.valueOf(2)));
     Assert.assertTrue(result.getChangeableSetAttr().contains(Integer.valueOf(31)));
   }
-  
+
   @Test
   public void singleNonNull_listEmpty() {
     Element _createRootElement = this.createRootElement();
@@ -405,7 +404,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertEquals(1, result.getChangeableListAttr().size());
     Assert.assertEquals("3", result.getChangeableListAttr().get(0));
   }
-  
+
   @Test
   public void singleNonNull_listNew() {
     Element _createRootElement = this.createRootElement();
@@ -423,7 +422,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertEquals("2", result.getChangeableListAttr().get(4));
     Assert.assertEquals("3", result.getChangeableListAttr().get(5));
   }
-  
+
   @Test
   public void singleNonNull_listExisting() {
     Element _createRootElement = this.createRootElement();
@@ -440,7 +439,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertEquals("1", result.getChangeableListAttr().get(3));
     Assert.assertEquals("2", result.getChangeableListAttr().get(4));
   }
-  
+
   @Test
   public void set_bagEmpty() {
     Element _createRootElement = this.createRootElement();
@@ -454,7 +453,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(3.14)));
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(2.71)));
   }
-  
+
   @Test
   public void set_bagPartiallyExisting() {
     Element _createRootElement = this.createRootElement();
@@ -470,7 +469,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(31.337)));
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(3.14)));
   }
-  
+
   @Test
   public void set_listEmpty() {
     Element _createRootElement = this.createRootElement();
@@ -484,7 +483,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableListAttr().contains("3"));
     Assert.assertTrue(result.getChangeableListAttr().contains("2"));
   }
-  
+
   @Test
   public void set_listPartiallyExisting() {
     Element _createRootElement = this.createRootElement();
@@ -502,7 +501,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertEquals("2", result.getChangeableListAttr().get(4));
     Assert.assertEquals("3", result.getChangeableListAttr().get(5));
   }
-  
+
   @Test
   public void list_bagEmpty() {
     Element _createRootElement = this.createRootElement();
@@ -516,7 +515,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(3.14)));
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(2.71)));
   }
-  
+
   @Test
   public void list_bagPartiallyExisting() {
     Element _createRootElement = this.createRootElement();
@@ -532,7 +531,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(31.337)));
     Assert.assertTrue(result.getChangeableBagAttr().contains(Double.valueOf(3.14)));
   }
-  
+
   @Test
   public void list_setEmpty() {
     Element _createRootElement = this.createRootElement();
@@ -546,7 +545,7 @@ public class TestEMergerEAttribute extends ATestEMerger<Element> {
     Assert.assertTrue(result.getChangeableSetAttr().contains(Integer.valueOf(3)));
     Assert.assertTrue(result.getChangeableSetAttr().contains(Integer.valueOf(2)));
   }
-  
+
   @Test
   public void list_setPartiallyExisting() {
     Element _createRootElement = this.createRootElement();

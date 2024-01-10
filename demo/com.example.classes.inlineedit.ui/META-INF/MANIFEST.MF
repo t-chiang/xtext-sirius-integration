@@ -20,7 +20,7 @@ Require-Bundle: com.example.classes.inlineedit,
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  com.example.classes.ui
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: com.example.classes.ui.quickfix,
  com.example.classes.ui.contentassist,
  com.example.classes.inlineedit.ui.internal

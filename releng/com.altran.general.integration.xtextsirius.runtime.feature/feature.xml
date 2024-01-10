@@ -52,72 +52,43 @@
       <import plugin="org.eclipse.sirius" version="6.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.sirius.properties.core" version="6.0.0" match="greaterOrEqual"/>
       <import plugin="org.antlr.runtime" version="3.2.0" match="compatible"/>
-      <import plugin="org.antlr.runtime" version="4.3.0" match="compatible"/>
       <import plugin="org.apache.batik.css" version="1.10.0" match="compatible"/>
-      <import plugin="org.apache.batik.css" version="1.6.0" match="compatible"/>
    </requires>
 
    <plugin
          id="com.altran.general.integration.xtextsirius.runtime"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="com.altran.general.integration.xtextsirius.model.xtext"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="com.altran.general.integration.xtextsirius.model.eef"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="com.altran.general.integration.xtextsirius.runtime.editpart.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="com.altran.general.integration.xtextsirius.runtime.eef.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="com.altran.general.integration.xtextsirius.model.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="com.altran.general.integration.xtextsirius.model.viewpoint"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="com.altran.general.integration.xtextsirius.model.diagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="com.altran.general.integration.xtextsirius.runtime.converter"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
 </feature>

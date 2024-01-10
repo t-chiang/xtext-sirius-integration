@@ -29,12 +29,12 @@ public class TestEMergerContainmentKey extends ATestEMergerContainmentIdentity<K
   protected EReference changeableSetContFeature() {
     return this.xtextSiriusTestPackage.getKeyElement_ChangeableSetCont();
   }
-  
+
   @Override
   protected EReference changeableUniqueListContFeature() {
     return this.xtextSiriusTestPackage.getKeyElement_ChangeableUniqueListCont();
   }
-  
+
   @Override
   public KeyElement newElement(final int requestedId, final String attrValue) {
     KeyElement _createKeyElement = this.xtextSiriusTestFactory.createKeyElement();
@@ -44,12 +44,12 @@ public class TestEMergerContainmentKey extends ATestEMergerContainmentIdentity<K
     };
     return ObjectExtensions.<KeyElement>operator_doubleArrow(_createKeyElement, _function);
   }
-  
+
   @Override
   protected KeyElement createRootElement() {
     return this.xtextSiriusTestFactory.createKeyElement();
   }
-  
+
   @Test
   @Override
   public void set_setExisting() {
@@ -77,7 +77,7 @@ public class TestEMergerContainmentKey extends ATestEMergerContainmentIdentity<K
     Assert.assertTrue(this.valueExists(result.getChangeableSetCont(), "a3"));
     Assert.assertTrue(this.valueExists(result.getChangeableSetCont(), "a2"));
   }
-  
+
   @Test
   @Override
   public void set_listPartiallyExisting() {
@@ -105,7 +105,7 @@ public class TestEMergerContainmentKey extends ATestEMergerContainmentIdentity<K
     Assert.assertTrue(this.valueExists(result.getChangeableUniqueListCont(), "a3"));
     Assert.assertTrue(this.valueExists(result.getChangeableUniqueListCont(), "a2"));
   }
-  
+
   @Test
   @Override
   public void list_listNew() {
@@ -131,7 +131,7 @@ public class TestEMergerContainmentKey extends ATestEMergerContainmentIdentity<K
     Assert.assertEquals("a3", result.getChangeableUniqueListCont().get(0).getChangeableAttr());
     Assert.assertEquals("a2", result.getChangeableUniqueListCont().get(1).getChangeableAttr());
   }
-  
+
   @Test
   @Override
   public void list_listExisting() {
@@ -159,7 +159,7 @@ public class TestEMergerContainmentKey extends ATestEMergerContainmentIdentity<K
     Assert.assertEquals("a3", result.getChangeableUniqueListCont().get(0).getChangeableAttr());
     Assert.assertEquals("a2", result.getChangeableUniqueListCont().get(1).getChangeableAttr());
   }
-  
+
   @Test
   @Override
   public void list_setPartiallyExisting() {

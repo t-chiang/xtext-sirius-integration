@@ -39,17 +39,17 @@ import org.junit.Assert;
 @SuppressWarnings("all")
 public class EditableFeaturesExtension<T extends IElement<?>> {
   protected T existing;
-  
+
   protected T edited;
-  
+
   protected Set<EStructuralFeature> untouchedFeatures;
-  
+
   private ATestEMerger<T> test;
-  
+
   public EditableFeaturesExtension(final ATestEMerger<T> test) {
     this.test = test;
   }
-  
+
   public EMerger<T> createEMerger(final T existing, final T edited) {
     final Function1<EStructuralFeature, Boolean> _function = (EStructuralFeature it) -> {
       return Boolean.valueOf(((!it.isDerived()) && edited.eIsSet(it)));
@@ -59,7 +59,7 @@ public class EditableFeaturesExtension<T extends IElement<?>> {
     };
     return this.createEMerger(existing, edited, IterableExtensions.<String>toSet(IterableExtensions.<EStructuralFeature, String>map(IterableExtensions.<EStructuralFeature>filter(edited.eClass().getEAllStructuralFeatures(), _function), _function_1)));
   }
-  
+
   public EMerger<T> createEMerger(final T existing, final T edited, final Set<String> editableFeatures) {
     EMerger<T> _xblockexpression = null;
     {
@@ -83,7 +83,7 @@ public class EditableFeaturesExtension<T extends IElement<?>> {
     }
     return _xblockexpression;
   }
-  
+
   public EMerger<T> createEMerger(final T existing, final EStructuralFeature feature) {
     EMerger<T> _xblockexpression = null;
     {
@@ -105,13 +105,13 @@ public class EditableFeaturesExtension<T extends IElement<?>> {
     }
     return _xblockexpression;
   }
-  
+
   protected String resourceName() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("resourceName.xmi");
     return _builder.toString();
   }
-  
+
   public EMerger<T> createEMerger(final T existing, final EStructuralFeature feature, final Set<String> editableFeatures) {
     EMerger<T> _xblockexpression = null;
     {
@@ -134,7 +134,7 @@ public class EditableFeaturesExtension<T extends IElement<?>> {
     }
     return _xblockexpression;
   }
-  
+
   public void checkUntouchedFeatures() {
     Assert.assertNotNull(this.existing);
     final Consumer<EStructuralFeature> _function = (EStructuralFeature feature) -> {
@@ -205,11 +205,11 @@ public class EditableFeaturesExtension<T extends IElement<?>> {
     };
     this.untouchedFeatures.forEach(_function);
   }
-  
+
   protected String extractAttr(final Object el) {
     return ((T) el).getChangeableAttr();
   }
-  
+
   protected Integer fillFeature(final EStructuralFeature feature) {
     int _xblockexpression = (int) 0;
     {
@@ -239,7 +239,7 @@ public class EditableFeaturesExtension<T extends IElement<?>> {
     }
     return Integer.valueOf(_xblockexpression);
   }
-  
+
   protected Object createAttributeValue(final EAttribute feature) {
     Object _xifexpression = null;
     boolean _isMany = feature.isMany();
@@ -289,7 +289,7 @@ public class EditableFeaturesExtension<T extends IElement<?>> {
     }
     return _xifexpression;
   }
-  
+
   protected Object createReferenceValue(final EReference feature, final AtomicInteger integer) {
     int i = integer.get();
     Object _xifexpression = null;

@@ -25,7 +25,7 @@ public class TestEMergerCrossReferenceKey extends ATestEMergerEReference<KeyElem
     };
     return ObjectExtensions.<KeyElement>operator_doubleArrow(_createKeyElement, _function);
   }
-  
+
   @Override
   protected KeyElement createRootElement() {
     return this.xtextSiriusTestFactory.createKeyElement();

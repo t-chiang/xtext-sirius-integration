@@ -10,7 +10,6 @@
 package com.altran.general.integration.xtextsirius.model.test.emerger;
 
 import com.altran.general.integration.xtextsirius.model.test.XtextSiriusTest.IElement;
-import com.altran.general.integration.xtextsirius.model.test.emerger.ATestEMergerContainmentMixed;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.util.Collections;
@@ -48,7 +47,7 @@ public abstract class ATestEMergerContainmentIdentity<T extends IElement<T>> ext
     Assert.assertTrue(result.getChangeableCont().getChangeableListAttr().contains("aaa"));
     Assert.assertTrue(result.getChangeableCont().getChangeableListAttr().contains("bbb"));
   }
-  
+
   @Test
   @Override
   public void set_setExisting() {
@@ -76,7 +75,7 @@ public abstract class ATestEMergerContainmentIdentity<T extends IElement<T>> ext
     Assert.assertTrue(this.valueExists(result.getChangeableSetCont(), "a2"));
     Assert.assertTrue(this.valueExists(result.getChangeableSetCont(), "q1"));
   }
-  
+
   @Test
   @Override
   public void list_listNew() {
@@ -102,7 +101,7 @@ public abstract class ATestEMergerContainmentIdentity<T extends IElement<T>> ext
     Assert.assertEquals("q1", result.getChangeableUniqueListCont().get(0).getChangeableAttr());
     Assert.assertEquals("q31", result.getChangeableUniqueListCont().get(1).getChangeableAttr());
   }
-  
+
   @Test
   @Override
   public void list_listExisting() {
@@ -130,7 +129,7 @@ public abstract class ATestEMergerContainmentIdentity<T extends IElement<T>> ext
     Assert.assertEquals("q1", result.getChangeableUniqueListCont().get(0).getChangeableAttr());
     Assert.assertEquals("a2", result.getChangeableUniqueListCont().get(1).getChangeableAttr());
   }
-  
+
   @Test
   @Override
   public void singleNonNull_setExisting() {
@@ -160,7 +159,7 @@ public abstract class ATestEMergerContainmentIdentity<T extends IElement<T>> ext
     Assert.assertTrue(this.valueExists(result.getChangeableSetCont(), "q2"));
     Assert.assertTrue(this.valueExists(result.getChangeableSetCont(), "q31"));
   }
-  
+
   @Test
   @Override
   public void singleNonNull_listExisting() {

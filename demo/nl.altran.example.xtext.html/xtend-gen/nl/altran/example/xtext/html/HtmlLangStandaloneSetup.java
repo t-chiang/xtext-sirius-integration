@@ -3,8 +3,6 @@
  */
 package nl.altran.example.xtext.html;
 
-import nl.altran.example.xtext.html.HtmlLangStandaloneSetupGenerated;
-
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
  */

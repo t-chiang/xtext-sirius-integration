@@ -11,7 +11,6 @@ package com.altran.general.integration.xtextsirius.model.test.emerger.editablefe
 
 import com.altran.general.integration.xtextsirius.model.test.XtextSiriusTest.Element;
 import com.altran.general.integration.xtextsirius.model.test.emerger.TestEMergerCrossReference;
-import com.altran.general.integration.xtextsirius.model.test.emerger.editablefeatures.EditableFeaturesExtension;
 import com.altran.general.integration.xtextsirius.runtime.util.EMerger;
 import com.google.common.collect.ImmutableSet;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -24,22 +23,22 @@ import org.junit.Test;
 @SuppressWarnings("all")
 public class TestEMergerCrossReferenceEditableFeatures extends TestEMergerCrossReference {
   private final EditableFeaturesExtension<Element> editableFeaturesExtension = new EditableFeaturesExtension<Element>(this);
-  
+
   @After
   public void checkUntouchedFeatures() {
     this.editableFeaturesExtension.checkUntouchedFeatures();
   }
-  
+
   @Override
   protected EMerger<Element> createEMerger(final Element existing, final Element edited) {
     return this.editableFeaturesExtension.createEMerger(existing, edited);
   }
-  
+
   @Override
   protected EMerger<Element> createEMerger(final Element existing, final EStructuralFeature feature) {
     return this.editableFeaturesExtension.createEMerger(existing, feature);
   }
-  
+
   @Test
   @Override
   public void singleNull_singleNew() {
@@ -56,7 +55,7 @@ public class TestEMergerCrossReferenceEditableFeatures extends TestEMergerCrossR
     final Element result = this.editableFeaturesExtension.createEMerger(existing, edited, ImmutableSet.<String>of("changeableRef")).merge(edited);
     Assert.assertNull(result.getChangeableRef());
   }
-  
+
   @Test
   @Override
   public void singleNull_singleExisting() {

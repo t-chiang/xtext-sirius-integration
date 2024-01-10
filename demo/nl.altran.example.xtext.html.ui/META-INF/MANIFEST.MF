@@ -18,7 +18,7 @@ Require-Bundle: nl.altran.example.xtext.html,
  org.eclipse.xtend.lib;resolution:=optional,
  org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: nl.altran.example.xtext.html.ui.quickfix,
  nl.altran.example.xtext.html.ui.contentassist,
  nl.altran.example.xtext.html.ui.internal

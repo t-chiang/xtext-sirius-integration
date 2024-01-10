@@ -8,7 +8,7 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: nl.altran.example.xtext.html,
  org.eclipse.xtext.ide,
  org.antlr.runtime
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: nl.altran.example.xtext.html.ide.contentassist.antlr,
  nl.altran.example.xtext.html.ide.contentassist.antlr.internal
 Automatic-Module-Name: nl.altran.example.xtext.html.ide

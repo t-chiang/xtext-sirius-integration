@@ -3,8 +3,6 @@
  */
 package nl.altran.example.xtext.html.validation;
 
-import nl.altran.example.xtext.html.validation.AbstractHtmlLangValidator;
-
 /**
  * This class contains custom validation rules.
  * 

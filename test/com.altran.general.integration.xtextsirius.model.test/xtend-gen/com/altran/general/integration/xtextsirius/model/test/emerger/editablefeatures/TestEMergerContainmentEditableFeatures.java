@@ -11,7 +11,6 @@ package com.altran.general.integration.xtextsirius.model.test.emerger.editablefe
 
 import com.altran.general.integration.xtextsirius.model.test.XtextSiriusTest.Element;
 import com.altran.general.integration.xtextsirius.model.test.emerger.TestEMergerContainment;
-import com.altran.general.integration.xtextsirius.model.test.emerger.editablefeatures.EditableFeaturesExtension;
 import com.altran.general.integration.xtextsirius.runtime.util.EMerger;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
@@ -29,22 +28,22 @@ import org.junit.Test;
 @SuppressWarnings("all")
 public class TestEMergerContainmentEditableFeatures extends TestEMergerContainment {
   private final EditableFeaturesExtension<Element> editableFeaturesExtension = new EditableFeaturesExtension<Element>(this);
-  
+
   @After
   public void checkUntouchedFeatures() {
     this.editableFeaturesExtension.checkUntouchedFeatures();
   }
-  
+
   @Override
   protected EMerger<Element> createEMerger(final Element existing, final Element edited) {
     return this.editableFeaturesExtension.createEMerger(existing, edited);
   }
-  
+
   @Override
   protected EMerger<Element> createEMerger(final Element existing, final EStructuralFeature feature) {
     return this.editableFeaturesExtension.createEMerger(existing, feature);
   }
-  
+
   @Test
   @Override
   public void singleNull_singleNew() {
@@ -61,7 +60,7 @@ public class TestEMergerContainmentEditableFeatures extends TestEMergerContainme
     final Element result = this.editableFeaturesExtension.createEMerger(existing, edited, ImmutableSet.<String>of("changeableCont")).merge(edited);
     Assert.assertNull(result.getChangeableCont());
   }
-  
+
   @Test
   @Override
   public void singleNull_singleExisting() {
@@ -78,7 +77,7 @@ public class TestEMergerContainmentEditableFeatures extends TestEMergerContainme
     final Element result = this.editableFeaturesExtension.createEMerger(existing, edited, ImmutableSet.<String>of("changeableCont")).merge(edited);
     Assert.assertNull(result.getChangeableCont());
   }
-  
+
   @Test
   @Override
   public void singleNonNull_singleExisting() {
@@ -103,7 +102,7 @@ public class TestEMergerContainmentEditableFeatures extends TestEMergerContainme
     Assert.assertTrue(result.getChangeableCont().getChangeableListAttr().contains("aaa"));
     Assert.assertTrue(result.getChangeableCont().getChangeableListAttr().contains("bbb"));
   }
-  
+
   @Test
   @Override
   public void set_listPartiallyExisting() {

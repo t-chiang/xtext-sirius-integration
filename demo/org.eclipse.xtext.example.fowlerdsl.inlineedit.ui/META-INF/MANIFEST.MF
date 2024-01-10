@@ -20,7 +20,7 @@ Require-Bundle: org.eclipse.xtext.example.fowlerdsl.inlineedit,
  org.eclipse.xtext.example.fowlerdsl.ui,
  org.eclipse.xtext.common.types.ui
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.eclipse.xtext.example.fowlerdsl.ui.contentassist,
  org.eclipse.xtext.example.fowlerdsl.ui.contentassist.antlr,
  org.eclipse.xtext.example.fowlerdsl.ui.contentassist.antlr.internal,

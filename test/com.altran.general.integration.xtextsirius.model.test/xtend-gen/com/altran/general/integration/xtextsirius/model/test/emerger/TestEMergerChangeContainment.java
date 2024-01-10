@@ -13,7 +13,6 @@ import com.altran.general.integration.xtextsirius.model.test.XtextSiriusTest.Con
 import com.altran.general.integration.xtextsirius.model.test.XtextSiriusTest.ContainedB;
 import com.altran.general.integration.xtextsirius.model.test.XtextSiriusTest.Element;
 import com.altran.general.integration.xtextsirius.model.test.XtextSiriusTest.IContainedElement;
-import com.altran.general.integration.xtextsirius.model.test.emerger.ATestEMergerEReference;
 import com.google.common.base.Objects;
 import java.util.Collections;
 import java.util.List;
@@ -61,7 +60,7 @@ public class TestEMergerChangeContainment extends ATestEMergerEReference<Element
     Assert.assertEquals("11b", result.getContainedSingle().eGet(this.xtextSiriusTestPackage.getContainedA_AttrB()));
     Assert.assertEquals("11x", result.getContainedSingle().eGet(this.xtextSiriusTestPackage.getContainedA_AttrX()));
   }
-  
+
   @Test
   public void single_multiEmpty() {
     ContainedA _createContainedA = this.xtextSiriusTestFactory.createContainedA();
@@ -83,7 +82,7 @@ public class TestEMergerChangeContainment extends ATestEMergerEReference<Element
     };
     Assert.assertTrue(IterableExtensions.<IContainedElement>exists(result.getContainedMulti(), _function_2));
   }
-  
+
   @Test
   public void single_multiNew() {
     ContainedA _createContainedA = this.xtextSiriusTestFactory.createContainedA();
@@ -133,7 +132,7 @@ public class TestEMergerChangeContainment extends ATestEMergerEReference<Element
     };
     Assert.assertTrue(IterableExtensions.<IContainedElement>exists(result.getContainedMulti(), _function_4));
   }
-  
+
   @Test
   public void single_multiExisting() {
     Element _createRootElement = this.createRootElement();
@@ -186,7 +185,7 @@ public class TestEMergerChangeContainment extends ATestEMergerEReference<Element
     };
     Assert.assertTrue(IterableExtensions.<IContainedElement>exists(result.getContainedMulti(), _function_3));
   }
-  
+
   @Test
   public void multi_multiEmpty() {
     ContainedA _createContainedA = this.xtextSiriusTestFactory.createContainedA();
@@ -221,7 +220,7 @@ public class TestEMergerChangeContainment extends ATestEMergerEReference<Element
     };
     Assert.assertTrue(IterableExtensions.<IContainedElement>exists(result.getContainedMulti(), _function_4));
   }
-  
+
   @Test
   public void multi_multiNew() {
     ContainedA _createContainedA = this.xtextSiriusTestFactory.createContainedA();
@@ -274,7 +273,7 @@ public class TestEMergerChangeContainment extends ATestEMergerEReference<Element
     };
     Assert.assertTrue(IterableExtensions.<IContainedElement>exists(result.getContainedMulti(), _function_4));
   }
-  
+
   @Test
   public void multi_multiExisting() {
     Element _createRootElement = this.createRootElement();
@@ -345,7 +344,7 @@ public class TestEMergerChangeContainment extends ATestEMergerEReference<Element
     };
     Assert.assertTrue(IterableExtensions.<IContainedElement>exists(result.getContainedMulti(), _function_3));
   }
-  
+
   @Test
   public void multi_multi() {
     Element _createRootElement = this.createRootElement();

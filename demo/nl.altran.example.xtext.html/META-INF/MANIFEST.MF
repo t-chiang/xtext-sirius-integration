@@ -13,7 +13,7 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtend.lib,
  org.eclipse.emf.common,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: nl.altran.example.xtext.html.parser.antlr,
  nl.altran.example.xtext.html,
  nl.altran.example.xtext.html.serializer,

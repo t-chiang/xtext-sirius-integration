@@ -10,7 +10,6 @@
 package com.altran.general.integration.xtextsirius.model.test.emerger;
 
 import com.altran.general.integration.xtextsirius.model.test.XtextSiriusTest.Element;
-import com.altran.general.integration.xtextsirius.model.test.emerger.ATestEMergerContainmentMixed;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import java.util.Collections;
@@ -29,7 +28,7 @@ public class TestEMergerContainment extends ATestEMergerContainmentMixed<Element
     Element _newElement = super.newElement(id, attrValue);
     return ((Element) _newElement);
   }
-  
+
   @Test
   @Override
   public void set_listPartiallyExisting() {
@@ -58,7 +57,7 @@ public class TestEMergerContainment extends ATestEMergerContainmentMixed<Element
     Assert.assertTrue(this.renderList(list), this.valueExists(list, "a3"));
     Assert.assertTrue(this.renderList(list), this.valueExists(list, "a2"));
   }
-  
+
   @Test
   @Override
   public void list_setPartiallyExisting() {

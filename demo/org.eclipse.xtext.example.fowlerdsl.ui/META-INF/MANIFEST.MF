@@ -19,7 +19,7 @@ Require-Bundle: org.eclipse.xtext.example.fowlerdsl;visibility:=reexport,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.emf.transaction
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.eclipse.xtext.example.fowlerdsl.ui.contentassist,
  org.eclipse.xtext.example.fowlerdsl.ui.contentassist.antlr,
  org.eclipse.xtext.example.fowlerdsl.ui.contentassist.antlr.internal,

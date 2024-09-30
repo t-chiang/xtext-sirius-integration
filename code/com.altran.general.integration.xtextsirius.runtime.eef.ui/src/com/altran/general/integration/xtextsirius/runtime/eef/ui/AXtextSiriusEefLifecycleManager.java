@@ -50,6 +50,9 @@ import com.google.inject.Injector;
 public abstract class AXtextSiriusEefLifecycleManager<C extends IXtextSiriusEditorCallback, E extends AXtextSiriusEditor<C>>
 extends AbstractEEFWidgetLifecycleManager
 implements IXtextSiriusEditorCallback {
+	
+	private static final int LINE_HEIGHT = 24;
+	
 	private final E editor;
 	private final Injector injector;
 	private final IEefXtextDescription controlDescription;
@@ -58,6 +61,7 @@ implements IXtextSiriusEditorCallback {
 	private XtextSiriusWidget widget;
 	private Consumer<Object> newValueConsumer;
 	private boolean enabled;
+	
 	
 	@SuppressWarnings("unchecked")
 	public AXtextSiriusEefLifecycleManager(
@@ -142,6 +146,10 @@ implements IXtextSiriusEditorCallback {
 		return this.widget;
 	}
 	
+	/**
+	 * This creates the Editor Control, which delegates to the Model or Value
+	 * Manager (via createXtextSiriusWidget)
+	 */
 	@Override
 	protected void createMainControl(final Composite parent, final IEEFFormContainer formContainer) {
 		this.widget = createXtextSiriusWidget(parent);
@@ -202,14 +210,45 @@ implements IXtextSiriusEditorCallback {
 	}
 	
 	protected @NonNull GridData translateToGridData() {
-		final GridData result = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
-		if (getWidgetDescription().isMultiLine()) {
-			// because it's two times the answer
-			result.heightHint = 42 * 2;
+		/*
+		 * Here is the bug, because it is hardcoded! if
+		 * (getWidgetDescription().isMultiLine()) { // because it's two times
+		 * the answer result.heightHint = 42 * 2; } }
+		 */
+		/*
+		 * Better use the implementation from the Sirius Text Editor: EEFTextLifecycleManager
+		 * 
+		 * <code>
+		// Get text area line count
+		int lineCount = description.getLineCount();
+		// Create text or text area according to the defined line count
+		if (lineCount > 1) {
+			this.text = widgetFactory.createStyledText(parent, SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP | SWT.MULTI);
+			GridData gridData = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
+			gridData.heightHint = lineCount * text.getLineHeight();
+			...
+		} else {
+			this.text = widgetFactory.createStyledText(parent, SWT.SINGLE);
+			GridData gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+			...
 		}
-		
+		</code>
+		 */
+		GridData result;
+		final int lineCount = getWidgetDescription().getLineCount();
+		if (lineCount > 1) {
+			// Note that the original Xtext editor uses GridData(SWT.FILL, SWT.FILL, true, true);
+			// Adjust as needed
+			result = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
+			result.heightHint = lineCount * LINE_HEIGHT; // Since we dont have access to the
+															// rendered text, we need to hardcode
+															// the line height
+		} else {
+			result = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		}
 		return result;
 	}
+
 	
 	protected void commit() {
 		final IStatus status = getContextAdapter().performModelChange(() -> {
